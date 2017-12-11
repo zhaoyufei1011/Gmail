@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>邮件发送</title>
+</head>
+<body>
+  <form Method="post">
+    <div class="form-group">
+      <label for="exampleInputEmail1">你的邮箱地址</label>
+      <input type="email" class="form-control" name="user" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">密码</label>
+      <input type="password" class="form-control" name="password" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">stmp服务器以及端口</label>
+      <input type="text" class="form-control" name="host"  placeholder="text">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">目标邮箱</label>
+      <input type="mail" class="form-control" name="to" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">标题</label>
+      <input type="text" class="form-control" name="subject" placeholder="text">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">文本内容</label>
+      <textarea type="文本内容"class="form-control" rows="3"name="body"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputFile">File input</label>
+      <input type="file" name="exampleInputFile">
+      <p class="help-block">Example block-level help text here.</p>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Check me out
+      </label>
+    </div>
+    <button  type="submit" class="btn btn-default">Submit</button>
+  </form>
+</body>
+</html>
