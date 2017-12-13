@@ -30,18 +30,18 @@ func Sendmail(w http.ResponseWriter, r *http.Request) {
 
 	var subject string = r.Form.Get("subject")
 	var body string = r.Form.Get("body")
-	//解析表格出现问题
+	//解析表格
 	fmt.Println("method:", r.Method)
 	if r.Method == "GET" {
 		t, _ := template.ParseFiles("Mainweb.html")
 		t.Execute(w, nil)
-	} else {
+	} else if r.Method == "POST" {
 
 		err := SendToMail(user, password, host, to, subject, body, "string")
 		fmt.Fprintln(w, "send mail ....")
 		if err != nil {
 			fmt.Fprintln(w, "send error")
-			fmt.Fprintln(w, &host)
+			//fmt.Fprintln(w, &host)
 			//fmt.rintln(w, &user)
 		} else {
 			fmt.Fprintln(w, "send sussessful")
