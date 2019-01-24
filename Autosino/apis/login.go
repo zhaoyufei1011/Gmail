@@ -1,6 +1,7 @@
 package apis
 
 import (
+	"Autosino/db"
 	"fmt"
 	"html/template"
 	"log"
@@ -18,10 +19,12 @@ func Login(c *gin.Context) {
 	c.HTML(http.StatusOK, "login.html", gin.H{"title": "登陆页"})
 }
 func Logins(c *gin.Context) {
-	name := c.PostForm("account")
-	passwd := c.PostForm("password")
-	if name == "root" && passwd == "123456" {
+	var Users db.User
+	Users.Name = c.PostForm("account")
+	Users.Passwd = c.PostForm("password")
+	if Users.Name == "root" && Users.Passwd == "123456" {
 		//	c.String(http.StatusOK, "test")
+	//	c.String(http.StatusOK, *gin.H{"body": "登陆成功"})
 		c.Redirect(302, "/home")
 	}
 }
