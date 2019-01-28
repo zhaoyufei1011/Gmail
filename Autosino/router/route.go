@@ -13,5 +13,6 @@ func InitRouter() *gin.Engine {
 	router.LoadHTMLGlob("view/*")
 
 	router.GET("/", apis.Upfilehtml)
+	router.POST("/upload", apis.Uploadfile)
 	return router
 }
